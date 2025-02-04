@@ -82,92 +82,6 @@ function mathCalculate() {
     }
 }
 
-// function inputFunction(func) {
-//     const expression = document.getElementById('expression');
-//     if (['sin', 'cos', 'tan'].includes(func)) {
-//         if (currentMode === 'deg') {
-//             // Add the number between the parentheses
-//             expression.value += `${func}(${Math.PI/180}*`;
-//         } else {
-//             expression.value += `${func}(`;
-//         }
-//     } else {
-//         expression.value += `${func}(`;
-//     }
-// }
-        
-
-
-// function mathCalculate() {
-//     const expression = document.getElementById('expression');
-//     try {
-//         let result = expression.value;
-        
-//         // Evaluate the expression
-//         const answer = math.evaluate(result);
-        
-//         // Format the result
-//         if (Number.isInteger(answer)) {
-//             expression.value = answer;
-//         } else {
-//             expression.value = Number(answer.toFixed(8));
-//         }
-        
-//         // Add to calculation log
-//         addLog(`${result} = ${expression.value}`);
-//     } catch (e) {
-//         addLog('Error: Invalid Expression');
-//         expression.value = 'Error';
-//         setTimeout(() => expression.value = '', 1500);
-//     }
-// }
-
-
-// function mathCalculate() {
-//     const expression = document.getElementById('expression');
-//     try {
-//         let result = expression.value;
-        
-//         // Handle degree to radian conversion for trig functions
-//         result = result.replace(/degToRad\((.*?)\)\)/g, (match, p1) => {
-//             const degValue = parseFloat(math.evaluate(p1));
-//             return (degValue * Math.PI / 180).toString();
-//         });
-        
-//         // Evaluate the expression
-//         const answer = math.evaluate(result);
-        
-//         // Format the result
-//         if (Number.isInteger(answer)) {
-//             expression.value = answer;
-//         } else {
-//             // Limit decimal places to 8
-//             expression.value = Number(answer.toFixed(8));
-//         }
-        
-//         // Add to calculation log
-//         addLog(`${expression.value} = ${expression.value}`);
-//     } catch (e) {
-//         console.error(e); // For debugging
-//         addLog('Error: Invalid Expression');
-//         expression.value = 'Error';
-//         setTimeout(() => expression.value = '', 1500);
-//     }
-// }
-
-
-// function inputFunction(func) {
-//     const expression = document.getElementById('expression');
-//     if (['sin', 'cos', 'tan'].includes(func)) {
-//         if (currentMode === 'deg') {
-//             expression.value += `${func}(degToRad(`;
-//         } else {
-//             expression.value += `${func}(`;
-//         }
-//     } else {
-//         expression.value += `${func}(`;
-//     }
-// }
 
 function setMode(mode) {
     currentMode = mode;
@@ -182,34 +96,6 @@ function degToRad(value) {
     return value * (Math.PI / 180);
 }
 
-// function mathCalculate() {
-//     const expression = document.getElementById('expression');
-//     try {
-//         let result = expression.value;
-        
-//         // Handle degree to radian conversion for trig functions
-//         result = result.replace(/degToRad\((.*?)\)/g, (match, p1) => {
-//             return (parseFloat(math.evaluate(p1)) * Math.PI / 180).toString();
-//         });
-        
-//         // Evaluate the expression
-//         const answer = math.evaluate(result);
-        
-//         // Format the result
-//         if (Number.isInteger(answer)) {
-//             expression.value = answer;
-//         } else {
-//             expression.value = parseFloat(answer.toFixed(8));
-//         }
-        
-//         // Add to calculation log
-//         addLog(`${result} = ${expression.value}`);
-//     } catch (e) {
-//         addLog('Error: Invalid Expression');
-//         expression.value = 'Error';
-//         setTimeout(() => expression.value = '', 1500);
-//     }
-// }
 
 function clearLog() {
     document.getElementById('log').innerHTML = '';
